@@ -1,0 +1,115 @@
+/// GUIDE BY Scott / piss#0040 ///
+
+
+
+--- Main ---
+
+~ Names ~
+
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "set a Player's name"
+11. Double-click on the first result
+12. Scroll up a few lines until you find "push 1" or "push 3"
+13. Click on the line containing "push 1" or "push 3"
+14. Press the spacebar
+15. Replace the "1" or "3" with "0" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+~ Trust Check ~
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "trust check failed for %s"
+11. Double-click on the first result
+12. Scroll up a few (10) lines until you find "jne (module name).(hexadecimal)" (example: "jne Roblox.63FADC")
+13. Click on the line containing "jne""
+14. Press the spacebar
+15. Replace the "jne" with "jmp" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+
+--- Security ---
+
+~ ioEnabled: ~
+
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "ioEnabled"
+11. Double-click on the first result
+12. Scroll up 4 lines
+13. Click on the line containing "push 4"
+14. Press the spacebar
+15. Replace the full line with "ret" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+
+WARNING: There are many more hidden RCEs that this guide doesn't go over. Please consider patching those.
+
+
+--- Extras ---
+
+~ Bloom Shaders: ~
+
+
+1. Open HxD
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press Search
+5. Press Find
+6. Press Hexa-Decimals
+7. Type "00 C6 45 05 00 83 E9 01 23 C8 C6 45 06 00"
+8. Press Enter
+9. Replace the first "00" with "01" (DO NOT ALTER ANYTHING ELSE)
+10. Press File
+11. Press Save or Save As and save your file
+
+~ Depth of Field: ~
+
+
+1. Open HxD
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press Search
+5. Press Find
+6. Press Hexa-Decimals
+7. Type "00 C6 45 05 00 83 E9 01 23 C8 C6 45 06 00"
+8. Press Enter
+9. Replace the third "00" with "01" (DO NOT ALTER ANYTHING ELSE)
+10. Press File
+11. Press Save or Save As and save your file
