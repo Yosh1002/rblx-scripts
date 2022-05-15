@@ -1,0 +1,74 @@
+how to patch 2016:
+
+trust check
+invalid request 5
+robloxlabs domain to your domain
+roblox domain to your domain
+public key
+
+yea
+then:
+for rccservice
+so like
+all you have to do is this:
+change domain from roblox.com to your domain
+do trust check
+and now listen carefully
+string search for api.roblox.com
+and change api.roblox.com/%s/?apikey=%s
+to
+www.yourdomain.com/%s/?apikey=%s
+after that,
+you must patch clist
+1. string search sysstats
+2. double click "Players::onRemoteSysStats disconnect"
+3. jmp both jne and je, then change push 1 to push 0
+4. go back to the References tab
+5. double click "Players::onRemoteSysStats disconnect not in the clist"
+6. first jmp the je above it
+7. then jmp the jne above it
+8. change push 1 to push 0
+do not leak this small compilation of steps kthx (edited)
+
+
+and after that, you string search for 'versioncompatibility'
+double click it,
+right click and then search in dump
+then select versioncompatibility (in dump) and make it all 00 in hex
+so after that
+you must creat e two folders in your domain for the client to join
+"GetAllowedMD5Hashes"
+"GetAllowedSecurityVersions"
+after that
+go into getallowedmd5hashes folder
+create index (.php)
+and then place the following in it
+{"data":["YOURCLIENTHASHGOESHERE"]}
+to get your client's hash
+go here http://onlinemd5.com/
+and drag your .exe to it
+then it will give you a bunch of numbers and letter
+the letter will be uppercase, you gotta make them lowercase
+now we set up GetAllowedSecurityVersions
+go in the folder
+create index (.php)
+and put this in it:
+{"data":["THEVERSIONOFYOURCLIENTHEREpcplayer"]}
+to get the version of your client
+launch your client with the single arg: --version
+now copy the first 7 characters (example: 0.xxx.0)
+
+after that you should put in the index like this:
+{"data":["0.xxx.0pcplayer"]}
+there you go
+easy rccservice basically
+the other steps i can help u out with later
+like joinscript
+if u want cool chad thing like this
+[ Its a image of the loading screen with Uranium as the game name By table ]
+
+its simple
+make a folder on the domain u patched with called marketplace
+then
+put this in it
+hold on
