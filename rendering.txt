@@ -1,0 +1,266 @@
+Guide by Scott and YoPoster
+
+~ Names ~
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "set a Player's name"
+11. Double-click on the first result
+12. Under that line, you should see "push 3"
+13. Click on the line containing "push 3"
+14. Press the spacebar
+15. Replace the "3" with "0" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+~ Trust Check ~
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "trust check failed for %s"
+11. Double-click on the first result
+12. Scroll up a few (10) lines until you find "jne (module name).(hexadecimal)" (example: "jne Roblox.63FADC")
+13. Click on the line containing "jne"
+14. Press the spacebar
+15. Replace the "jne" with "jmp" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+~ IDs ~
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "set a Player's ID"
+11. Double-click on the first result
+12. Under that line, you should see "push 3"
+13. Click on the line containing "push 3"
+14. Press the spacebar
+15. Replace the "3" with "0" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+~ Character Names ~
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "set a Character's name"
+11. Double-click on the first result
+12. You should see a string containing "set a Character's name". Under that line, you should see "push 3"
+13. Click on the line containing "push 3"
+14. Press the spacebar
+15. Replace the "3" with "0" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+~ Assets ~
+
+1. Open HxD
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press Search
+5. Press Find
+6. Type "roblox.com/asset"
+7. Press Enter
+8. Replace "roblox.com" with your asset URL (must be 10 characters or less). If your URL is more than 10 characters, you can use a DLL to patch it.
+9. Press File
+10. Press Save or Save As and save your file
+
+--- Security ---
+
+~ ioEnabled ~
+
+// If you don't see any results for ioEnabled you may skip this part. //
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "ioEnabled"
+11. Double-click on the first result
+12. Scroll up 4 lines
+13. Click on the line containing "push 4"
+14. Press the spacebar
+15. Replace the full line with "ret" (DO NOT ALTER ANY ITHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+~ HtmlService (2008) ~
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "htmlservice"
+11. Double-click on the first result
+12. Scroll up a few lines until you find "jne (module name).(hexadecimal)" (example: "jne Roblox.63FADC")
+13. Click on the line containing "jne"
+14. Press the spacebar
+15. Replace the "jne" with "jmp" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+
+WARNING: There are many more hidden RCEs that this guide doesn't go over. Please consider patching those.
+
+--- Rendering ---
+
+~ Direct3D (forces Direct3D rendering) ~
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "Direct3D"
+11. Double-click on the first result
+12. Under that line, you should see "push 3"
+13. Click on the line containing "push 3"
+14. Press the spacebar
+15. Replace the "3" with "0" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+~ OpenGL (forces OpenGL rendering) ~
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "Direct3D"
+11. Double-click on the first result
+12. Under that line, you should see "push 3"
+13. Click on the line containing "push 3"
+14. Press the spacebar
+15. Replace the "3" with "4" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+21. The graphics mode is now OpenGL.
+
+
+Note: If you leave it at "push 3", it will give players the option to choose which type of rendering they would like.
+
+--- Errors ---
+
+~ SiteUrl ~
+
+1. Open x32dbg
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press View
+5. Double-click on your client again under the modules column (ie: Roblox.exe)
+6. Right-click in assembly view
+7. Select Search for...
+8. Select Current Module
+9. Select String References
+10. Type "Failed to get SiteUrl"
+11. Double-click on the first result
+12. Scroll up a few (15) lines until you find "jne (module name).(hexadecimal)" (example: "jne Roblox.63FADC")
+13. Click on the line containing "jne"
+14. Press the spacebar
+15. Replace the "jne" with "jmp" (DO NOT ALTER ANY OTHER LINES)
+16. Press the enter key
+17. Press the CTRL+P keys
+18. Double-click your client name (ie: Roblox.exe)
+19. Press Patch File
+20. Save your file
+
+--- Extras ---
+
+~ Depth of Field ~
+
+1. Open HxD
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press Search
+5. Press Find
+6. Press Hexa-Decimals
+7. Type "00 C6 45 05 00 83 E9 01 23 C8 C6 45 06 00"
+8. Press Enter
+9. Replace the third "00" with "01" (DO NOT ALTER ANYTHING ELSE)
+10. Press File
+11. Press Save or Save As and save your file
+
+~ Bloom (2008) ~
+
+1. Open HxD
+2. Press file, then press open
+3. Select your client (ie: Roblox.exe)
+4. Press Search
+5. Press Find
+6. Press Hexa-Decimals
+7. Type "00 C6 45 05 00 83 E9 01 23 C8 C6 45 06 00"
+8. Press Enter
+9. Replace the first "00" with "01" (DO NOT ALTER ANYTHING ELSE)
+10. Press File
+11. Press Save or Save As and save your file
